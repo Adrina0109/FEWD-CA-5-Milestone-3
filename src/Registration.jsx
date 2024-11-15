@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import './App.css';
 
 const Register = ({ onSuccessfulRegistration }) => {
+  const [user,setUser]= useState({
+    name:"",
+    email:"",
+    password:"",
+    repeatPassword:""
+  })
   // Task 3: Define State Variables
   // Hint: Define state variables to manage user input fields (name, email, password, repeatPassword).
   // const [user, setUser] = useState({})
@@ -20,10 +26,14 @@ const Register = ({ onSuccessfulRegistration }) => {
 
     // Example validation functions
     const isNameValid = (name) => {
+      return name.length>0;
       // Check if name is valid
     };
 
-    const isEmailValid = (email) => {
+    // adrina@gmail.com
+    
+    const isEmailValid = (email) => { 
+      return /\S+@\S+\.\S+/.test(email);
       // Check if email is valid
     };
 
